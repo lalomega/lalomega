@@ -7,3 +7,17 @@
   <input type="email" id="email" name="email"><br>
   <input type="submit" value="Register">
 </form>
+
+
+
+
+//Aligning text boxes using flex-wrap
+<form style="display: flex; flex-wrap: wrap;">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <input type="submit" value="Register">
+</form>
