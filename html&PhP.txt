@@ -41,3 +41,10 @@ You will also need to create a "register.php" file that will handle the form sub
     }
     mysqli_close($conn);
 ?>
+
+
+Here is the connect.php code
+<?php
+	// Connect to the database
+	$conn = mysqli_connect("hostname", "username", "password", "database_name");
+?>
