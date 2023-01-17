@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+</head>
+<body>
+	<form action="register.php" method="post">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+		
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+		
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br>
+		
+		<input type="submit" value="Register">
+	</form>
+</body>
+</html>
+
+
+This form consists of three input fields for name, email and password and a submit button. The form's action is set to "register.php" and the method is set to "post". This means that when the user submits the form, the data will be sent to the "register.php" file using the "post" method.
+
+You will also need to create a "register.php" file that will handle the form submission and insert the data into the database. Here is an example of how the "register.php" file can be implemented:
+
+<?php
+    include 'connect.php';
+    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+
+        if(mysqli_query($conn, $query)){
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $query . "<br>" . mysqli_error($conn);
+        }
+    }
+    mysqli_close($conn);
+?>
